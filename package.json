@@ -1,0 +1,22 @@
+{
+  "description": "travel-agency/ ├── public/ │   ├── styles/ │   │   └── main.css │   ├── images/ │   └── scripts/ │       └── main.js ├── routes/ │   └── travelRoutes.js ├── views/ │   ├── home.ejs │   └── about.ejs ├── server.js └── README.md # assWeb2 # assWeb2 # ASS1Web",
+  "dependencies": {
+    "axios": "^1.6.7",
+    "body-parser": "^1.20.2",
+    "date-fns": "^3.3.1",
+    "ejs": "^3.1.9",
+    "express": "^4.18.2",
+    "faker": "^6.6.6",
+    "method-override": "^3.0.0",
+    "openweathermap-js": "^1.0.1",
+    "path": "^0.12.7"
+  },
+  "scripts": {
+    "start": "node server.js"
+  },
+  "name": "ass",
+  "version": "1.0.0",
+  "main": "server.js",
+  "author": "",
+  "license": "ISC"
+}
