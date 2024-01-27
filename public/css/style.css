@@ -1,0 +1,64 @@
+body {
+    font-family: "Open Sans", sans-serif;
+    background-color: #f8f9fa;
+    /* Добавлен цвет фона */
+}
+
+.ticket {
+    background-color: #fff;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    overflow: hidden;
+    margin: 0 auto;
+}
+
+
+.top {
+    height: 80px;
+    background: #ffcc05;
+    margin: 0 auto;
+    width: 100%;
+    padding: 2rem 0;
+}
+
+.city-name {
+    color: #000;
+    margin: 0;
+}
+
+.bottom {
+    margin: 6rem;
+}
+
+
+
+.bar--code {
+    height: 50px;
+    width: 100%;
+    margin: 0 auto;
+    position: relative;
+}
+
+.bar--code::after {
+    content: "";
+    position: absolute;
+    width: 6px;
+    height: 100%;
+    background: #000;
+    top: 0;
+    left: 0;
+    box-shadow: 10px 0 #000, 30px 0 #000, 40px 0 #000, 67px 0 #000, 90px 0 #000, 100px 0 #000, 180px 0 #000,
+        165px 0 #000, 200px 0 #000, 210px 0 #000, 135px 0 #000, 120px 0 #000;
+}
+
+.bar--code::before {
+    content: "";
+    position: absolute;
+    width: 3px;
+    height: 100%;
+    background: #000;
+    top: 0;
+    left: 11px;
+    box-shadow: 12px 0 #000, -4px 0 #000, 45px 0 #000, 65px 0 #000, 72px 0 #000, 78px 0 #000, 97px 0 #000,
+        150px 0 #000, 165px 0 #000, 180px 0 #000, 135px 0 #000, 120px 0 #000;
+}
