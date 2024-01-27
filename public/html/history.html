@@ -1,0 +1,91 @@
+<!-- index.html -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tour Management System</title>
+</head>
+<body>
+    <h1>Tour Management System</h1>
+
+    <h2>Add Tour</h2>
+    <form id="addTourForm">
+        <label for="flightNumber">Flight Number:</label>
+        <input type="text" name="flightNumber" required>
+
+        <!-- Add other form fields as needed -->
+
+        <button type="submit">Add Tour</button>
+    </form>
+
+    <h2>Update Tour</h2>
+    <form id="updateTourForm">
+        <label for="tourId">Tour ID:</label>
+        <input type="text" name="tourId" required>
+
+        <!-- Add other form fields for updating -->
+
+        <button type="submit">Update Tour</button>
+    </form>
+
+    <h2>Delete Tour</h2>
+    <form id="deleteTourForm">
+        <label for="tourIdToDelete">Tour ID to Delete:</label>
+        <input type="text" name="tourIdToDelete" required>
+
+        <button type="submit">Delete Tour</button>
+    </form>
+
+    <script>
+        // Simple JavaScript code to handle form submissions using Fetch API
+        document.getElementById('addTourForm').addEventListener('submit', function (event) {
+            event.preventDefault();
+            
+            const formData = new FormData(this);
+
+            fetch('/addTour', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify(Object.fromEntries(formData)),
+            })
+            .then(response => response.json())
+            .then(data => console.log(data))
+            .catch(error => console.error('Error:', error));
+        });
+
+        document.getElementById('updateTourForm').addEventListener('submit', function (event) {
+            event.preventDefault();
+            
+            const formData = new FormData(this);
+
+            fetch(`/updateTour/${formData.get('tourId')}`, {
+                method: 'PUT',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify(Object.fromEntries(formData)),
+            })
+            .then(response => response.json())
+            .then(data => console.log(data))
+            .catch(error => console.error('Error:', error));
+        });
+
+        document.getElementById('deleteTourForm').addEventListener('submit', function (event) {
+            event.preventDefault();
+            
+            const formData = new FormData(this);
+
+            fetch(`/deleteTour/${formData.get('tourIdToDelete')}`, {
+                method: 'DELETE',
+            })
+            .then(response => response.json())
+            .then(data => console.log(data))
+            .catch(error => console.error('Error:', error));
+        });
+    </script>
+</body>
+</html>
