@@ -59,7 +59,7 @@ Two NPM packages related to the project are integrated:
 ## Enhanced UI
 
 - Additional select fields for country, hotel, date arrival, date departure, and quantity of persons (adult and children) for comprehensive Tour editing.
-- Dropdowns for selecting country and city, along with control buttons (view tour, add tour, delete tour, history).
+- Dropdowns for selecting city, along with control buttons (view tour, add tour, delete tour, history).
 - Updated Tour result displayed with a meaningful interpretation and enhanced style for a visually appealing interface.
 
 ## Tour History
