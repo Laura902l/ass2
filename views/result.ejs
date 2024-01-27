@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Booking Result</title>
+    <!-- Bootstrap CSS -->
+    <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css'>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <!-- Убедитесь, что пути к файлам style.css и script.js указаны правильно -->
+    <link rel="stylesheet" href="/css/style.css">
+    <style>
+
+    </style>
+</head>
+
+<body>
+
+    <!-- Navigation Bar -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <a class="navbar-brand" href="/">Home</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
+            aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav">
+                <li class="nav-item active">
+                    <a class="nav-link" href="/travel/travelagency">Travel Agency</a>
+                </li>
+
+                <!-- Add more navigation links if needed -->
+            </ul>
+        </div>
+    </nav>
+
+    <div class="container-fluid mt-4">
+        <div class="row">
+            <div class="ticket airline mt-4">
+                <div class="top d-flex justify-content-between align-items-center">
+                    <h1 class="boarding-pass-title text-center mb-0">Boarding Pass</h1>
+                    <h2 class="city-name">
+                        <%= cityName %>
+                    </h2>
+                </div>
+
+                <div class="bottom">
+                    <div class="column">
+                        <div class="row">
+                            <p><span>Flight</span>
+                                <%= flightNumber %>
+                            </p>
+                        </div>
+                        <div class="row">
+                            <p><strong>Date Arrival:</strong>
+                                <%= formattedDateArrival %>
+                            </p>
+                        </div>
+                        <div class="row">
+                            <p><strong>Date Departure:</strong>
+                                <%= formattedDateDeparture %>
+                            </p>
+
+                        </div>
+
+
+                        </p>
+
+
+                        <div class="row">
+
+                            <div class="col-sm-3">
+                                <p><strong>Total:</strong>&nbsp;$<%= totalCost.toFixed(1) %>
+
+                            </div>
+
+                            <div class="col-sm-3">
+                                <p><strong>Hotel Rating:</strong>
+                                    <%= hotelRating %>
+                                </p>
+                            </div>
+                            <div class="col-sm-3">
+                                <p><strong>Adults:</strong>
+                                    <%= adults %>
+                                </p>
+                            </div>
+                            <div class="col-sm-3">
+                                <p><strong>Children:</strong>
+                                    <%= children %>
+                                </p>
+                            </div>
+
+                        </div>
+                    </div>
+                    <div class="bar--code mt-4"></div>
+                    <div class="row">
+                       
+
+                        <div class="col-md-6 mt-4">
+                            <a class="btn btn-danger" href="/history">Manage Tour</a>
+                        </div>
+                        <div class="col-md-6  mt-4">
+                            <a class="btn btn-warning" href="/">Accept</a>
+                        </div>
+                    </div>
+
+
+                </div>
+            </div>
+        </div>
+
+
+        <!-- Bootstrap JS, Popper.js, and jQuery -->
+        <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+
+</html>

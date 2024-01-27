@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>History</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+   <link rel="stylesheet" href="css/index.css">
+</head>
+
+<body>
+
+ <!-- Navigation Bar -->
+ <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <a class="navbar-brand" href="/">Home</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
+        aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav">
+            <li class="nav-item active">
+                <a class="nav-link" href="/travel/travelagency">Travel Agency</a>
+            </li>
+        </ul>
+    </div>
+</nav>
+    <div class="container">
+        <h1>Booking History</h1>
+        <% tourHistory.forEach(function(item, index) { %>
+            <% if (index % 3===0) { %>
+                <div class="row">
+                    <% } %>
+                        <div class="col-md-4">
+                            <div class="card mb-3">
+                                <div class="card-body">
+                                    <h5 class="card-title">City Name:
+                                        <%= item.cityName %>
+                                    </h5>
+
+                                    <p class="card-text">Adults:
+                                        <%= item.adults %>
+                                    </p>
+
+                                    <p class="card-text">Children:
+                                        <%= item.children %>
+                                    </p>
+
+                                    <p class="card-text">Phone:
+                                        <%= item.phone %>
+
+                                    </p>
+
+                                    <p class="card-text">Hotel Rating:
+                                        <%=item.hotelRating %>
+                                    </p>
+
+                                    <p class="card-text">Date of Arrival:
+                                        <%= item.formattedDateArrival %>
+                                    </p>
+
+                                    <p class="card-text">Date of Departure:
+                                        <%= item.formattedDateDeparture %>
+
+                                    </p>
+
+                                    <p class="card-text">Price:
+                                        <%= item.totalCost %>
+                                    </p>
+
+
+                                    <a class="btn btn-warning mb-3"
+                                        onclick='showForm("<%=item.cityName%>","<%=index%>")'>Edit</a>
+                                    <form action="/history/delete/<%= index %>" method="POST">
+                                        <input type="hidden" name="_method" value="DELETE">
+                                        <button type="submit" class="btn btn-dark">Delete</button>
+
+                                    </form>
+
+
+
+
+
+
+                                </div>
+                            </div>
+                        </div>
+
+                        <% if ((index + 1) % 3===0 || index===tourHistory.length - 1) { %>
+                </div>
+                <% } %>
+                    <% }); %>˝
+
+
+
+
+
+    </div>
+
+    </div>
+    <div id="bookingForm" style="display: none;">
+        <form action="/history/edit/" id="form" method="post">
+            <div class="row">
+                <div class="col-12">
+                    <h2 class="text-center mb-4">
+                        Booking Information
+                        <button type="button" class="btn btn-danger float-right" onclick="hideForm()">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </h2>
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="cityName">City:</label>
+                <input type="text" class="form-control" id="cityNameEdit" name="cityNameEdit" readonly required>
+            </div>
+
+            <div class="form-group">
+                <label for="hotel">Hotel:</label>
+                <input type="text" class="form-control" id="hotelRatingEdit" name="hotelRatingEdit"
+                    placeholder="Enter your hotel" required>
+            </div>
+            <div class="form-group">
+                <label for="phone">Phone:</label>
+                <input type="tel" class="form-control" id="phoneEdit" name="phoneEdit"
+                    placeholder="Enter your phone number" required>
+            </div>
+            <div class="form-row">
+                <div class="form-group col-md-6">
+                    <label for="dateArrival">Date arrival:</label>
+                    <input type="date" class="form-control" id="formattedDateArrivalEdit"
+                        name="formattedDateArrivalEdit" placeholder="Enter arriving date:" required>
+                </div>
+                <div class="form-group col-md-6">
+                    <label for="dateDeparture">Date departure:</label>
+                    <input type="date" class="form-control" id="formattedDateDepartureEdit"
+                        name="formattedDateDepartureEdit" placeholder="Enter departure date:" required>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="form-group">
+                        <label for="adults">Adults:</label>
+                        <input type="number" class="form-control" id="adultsEdit" name="adultsEdit" required>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="form-group">
+                        <label for="children">Children:</label>
+                        <input type="number" class="form-control" id="childrenEdit" name="childrenEdit" required>
+                    </div>
+                </div>
+            </div>
+            <button type="submit" class="btn btn-primary">Submit</button>
+
+
+        </form>
+
+
+    </div>
+
+    <script>
+        function showForm(cityname, index) {
+            document.getElementById("bookingForm").style.display = "block";
+            document.getElementById("cityNameEdit").value = cityname;
+            document.getElementById("form").action = "/history/edit/" + index;
+        }
+
+
+        function hideForm() {
+            document.getElementById("bookingForm").style.display = "none";
+        }
+
+
+    </script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+
+</html>
