@@ -5,9 +5,9 @@ Welcome to the Tour Management System, a web application built using Node.js and
 ## Installation and Run Instructions
 
 1. Clone the Repository:
-
     ```bash
-    git clone [https://github.com/Laura902l/assWeb2.git](https://github.com/Laura902l/ass1/tree/main.git)
+    git clone https://github.com/Laura902l/assWeb2/edit/main.git
+
     cd assWeb2
     ```
 
@@ -47,7 +47,15 @@ Two NPM packages related to the project are integrated:
 
 - **Axios**: Used for making HTTP requests to the OpenWeatherMap API for weather information.
 - **Bootstrap**: Integrated for styling and responsiveness.
+- Utilizes at least two npm packages:
+  - Axios for weather information from an API.
+- Faker for generating appropriate data.
+  - Calculates the cost of the tour and displays it.
+- Implements weather conditions of the chosen tour.
+- Includes a history feature storing recently selected tours with timestamps.
+- Creates a route to view the history of tours.
 
+- 
 ## Enhanced UI
 
 - Additional select fields for country, hotel, date arrival, date departure, and quantity of persons (adult and children) for comprehensive Tour editing.
