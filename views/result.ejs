@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Booking Result</title>
+    <!-- Bootstrap CSS -->
+    <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css'>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <!-- Убедитесь, что пути к файлам style.css и script.js указаны правильно -->
+    <link rel="stylesheet" href="./style.css">
+    <script src="./script.js"></script>
+    <style>
+        body {
+            font-family: "Open Sans", sans-serif;
+            background-color: #f8f9fa;
+            /* Добавлен цвет фона */
+        }
+
+        .ticket {
+            background-color: #fff;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            border-radius: 8px;
+            overflow: hidden;
+            margin: 0 auto;
+        }
+
+
+        .top {
+            height: 80px;
+            background: #ffcc05;
+            margin: 0 auto;
+            width: 100%;
+            padding: 2rem 0;
+        }
+
+        .city-name {
+            color: #000;
+            margin: 0;
+        }
+
+        .bottom {
+            margin: 6rem;
+        }
+
+
+
+        .bar--code {
+            height: 50px;
+            width: 100%;
+            margin: 0 auto;
+            position: relative;
+        }
+
+        .bar--code::after {
+            content: "";
+            position: absolute;
+            width: 6px;
+            height: 100%;
+            background: #000;
+            top: 0;
+            left: 0;
+            box-shadow: 10px 0 #000, 30px 0 #000, 40px 0 #000, 67px 0 #000, 90px 0 #000, 100px 0 #000, 180px 0 #000,
+                165px 0 #000, 200px 0 #000, 210px 0 #000, 135px 0 #000, 120px 0 #000;
+        }
+
+        .bar--code::before {
+            content: "";
+            position: absolute;
+            width: 3px;
+            height: 100%;
+            background: #000;
+            top: 0;
+            left: 11px;
+            box-shadow: 12px 0 #000, -4px 0 #000, 45px 0 #000, 65px 0 #000, 72px 0 #000, 78px 0 #000, 97px 0 #000,
+                150px 0 #000, 165px 0 #000, 180px 0 #000, 135px 0 #000, 120px 0 #000;
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- Navigation Bar -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <a class="navbar-brand" href="/">Home</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
+            aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav">
+                <li class="nav-item active">
+                    <a class="nav-link" href="/travel/travelagency">Travel Agency</a>
+                </li>
+
+                <!-- Add more navigation links if needed -->
+            </ul>
+        </div>
+    </nav>
+
+    <div class="container-fluid mt-4">
+        <div class="row">
+            <div class="ticket airline mt-4">
+                <div class="top d-flex justify-content-between align-items-center">
+                    <h1 class="boarding-pass-title text-center mb-0">Boarding Pass</h1>
+                    <h2 class="city-name">
+                        <%= cityName %>
+                    </h2>
+                </div>
+
+                <div class="bottom">
+                    <div class="column">
+                        <div class="row">
+                            <p><span>Flight</span>
+                                <%= flightNumber %>
+                            </p>
+                        </div>
+                        <div class="row">
+                            <p><strong>Date Arrival:</strong>
+                                <%= formattedDateArrival %>
+                            </p>
+                        </div>
+                        <div class="row">
+                            <p><strong>Date Departure:</strong>
+                                <%= formattedDateDeparture %>
+                            </p>
+
+                        </div>
+
+
+                        </p>
+
+
+                        <div class="row">
+
+                            <div class="col-sm-3">
+                                <p><strong>Total:</strong>&nbsp;$<%= totalCost.toFixed(1) %>
+
+                            </div>
+
+                            <div class="col-sm-3">
+                                <p><strong>Hotel Rating:</strong>
+                                    <%= hotelRating %>
+                                </p>
+                            </div>
+                            <div class="col-sm-3">
+                                <p><strong>Adults:</strong>
+                                    <%= adults %>
+                                </p>
+                            </div>
+                            <div class="col-sm-3">
+                                <p><strong>Children:</strong>
+                                    <%= children %>
+                                </p>
+                            </div>
+
+                        </div>
+                    </div>
+                    <div class="bar--code mt-4"></div>
+                    <div class="col-md-6 text-right mt-4">
+                        <a class="btn btn-dark" href="/">Exit</a>
+                    </div>
+                </div>
+                
+            </div>
+        </div>
+    </div>
+
+
+    <!-- Bootstrap JS, Popper.js, and jQuery -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+
+</html>
