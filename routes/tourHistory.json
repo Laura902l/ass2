@@ -1,0 +1,13 @@
+[
+  {
+    "flightNumber": "5D8708",
+    "cityName": "Paris",
+    "hotelRating": "1",
+    "phone": "3",
+    "formattedDateArrival": "2024-01-05",
+    "formattedDateDeparture": "2024-01-16",
+    "adults": "3",
+    "children": "4",
+    "totalCost": 6250
+  }
+]
