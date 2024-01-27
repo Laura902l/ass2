@@ -35,7 +35,7 @@ The project has the following structure:
 
 ## HTML Template
 
-The HTML template (`views/history.ejs`) uses Bootstrap for a clean and responsive design. It includes a navigation bar for easy navigation and a footer displaying the group name.
+The HTML template (`home.ejs`) uses Bootstrap for a clean and responsive design. It includes a navigation bar for easy navigation and a footer displaying the group name.
 
 ## Express Server (server.js)
 
