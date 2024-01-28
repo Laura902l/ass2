@@ -73,14 +73,7 @@
                                     <form action="/history/delete/<%= index %>" method="POST">
                                         <input type="hidden" name="_method" value="DELETE">
                                         <button type="submit" class="btn btn-dark">Delete</button>
-
                                     </form>
-
-
-
-
-
-
                                 </div>
                             </div>
                         </div>
@@ -90,13 +83,11 @@
                 <% } %>
                     <% }); %>˝
 
-
-
-
-
     </div>
 
     </div>
+
+
     <div id="bookingForm" style="display: none;">
         <form action="/history/edit/" id="form" method="post">
             <div class="row">
@@ -166,11 +157,9 @@
             document.getElementById("form").action = "/history/edit/" + index;
         }
 
-
         function hideForm() {
             document.getElementById("bookingForm").style.display = "none";
         }
-
 
     </script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
