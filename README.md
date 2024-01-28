@@ -8,7 +8,7 @@ Welcome to the Tour Management System, a web application built using Node.js and
     ```bash
     
 
-
+git clone https://github.com/Laura902l/assWeb2.git
     cd assWeb2
     ```
 
