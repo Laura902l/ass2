@@ -11,8 +11,6 @@ const tourHistoryFilePath = path.join(__dirname, 'tourHistory.json');
 const router = express.Router();
 const methodOverride = require('method-override');
 app.use(methodOverride('_method'));
-
-// Array to store tour history data
 const tourHistory = [];
 
 router.get('/', (req, res) => {
@@ -20,7 +18,6 @@ router.get('/', (req, res) => {
 });
 
 
-// Move the function definitions to the top
 const generateRandomAlphaNumeric = (length) => {
     const characters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789';
     let result = '';
@@ -31,15 +28,12 @@ const generateRandomAlphaNumeric = (length) => {
     return result;
 };
 
-// Function to generate a random number within a given range
 const generateRandomNumber = (min, max) => {
     return Math.floor(Math.random() * (max - min + 1)) + min;
 };
 
-// Read tours from JSON file
 router.post('/submitForm', async (req, res) => {
     try {
-        // Extract data from the submitted form
         const cityName = req.body.cityName;
         const adults = parseInt(req.body.adults) || 0;
         const children = parseInt(req.body.children) || 0;
@@ -66,8 +60,6 @@ router.post('/submitForm', async (req, res) => {
         };
 
         if (['mist', 'broken clouds', 'haze'].includes(weatherResponse.data.weather[0].description)) {
-            // If the weather conditions indicate foggy weather, redirect to the home page
-            // Assuming you are rendering 'cancel.ejs' in your route handler
         return res.render('cancel');
         } else {
             let baseCost;
@@ -78,16 +70,12 @@ router.post('/submitForm', async (req, res) => {
                 baseCost = (adults + 0.5 * children) * 1000;
                 baseCost *= hotelRating;
             } else {
-                // Default case for other cities
-                // Calculate the duration of the stay in days
                 const durationInDays = Math.ceil((dateDeparture - dateArrival) / (1000 * 60 * 60 * 24));
-                // Example: calculate base cost based on the number of adults, children, and hotel rating
-                baseCost = (adults + 0.5 * children) * 1250; // Assuming $100 per adult and $50 per child
+                baseCost = (adults + 0.5 * children) * 1250; 
                 baseCost *= hotelRating; // Increase cost based on hotel rating
                 console.log("baseCost", baseCost)
             }
 
-            // Example: calculate discount based on the number of children
             const discountForChildren = children > 5 ? 0.1 * baseCost : 0; // 10% discount if more than 5 children
 
             // Total cost
@@ -96,7 +84,6 @@ router.post('/submitForm', async (req, res) => {
             
             const flightNumber = generateRandomAlphaNumeric(2).toUpperCase() + generateRandomNumber(1000, 9999);
             
-            // Save the booking details to tourHistory array (or your database)
             const bookingDetails = {
                 flightNumber,
                 cityName,
