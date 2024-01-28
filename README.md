@@ -14,8 +14,8 @@ Welcome to the Tour Management System, a web application built using Node.js and
 2. Install Dependencies:
 
     ```bash
-    npm install
     npm install method-override
+    npm install
     ```
 
 3. Run the Application:
