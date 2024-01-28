@@ -38,10 +38,10 @@ router.post('/submitForm', async (req, res) => {
         const adults = parseInt(req.body.adults) || 0;
         const children = parseInt(req.body.children) || 0;
         const phone = req.body.phone;
-        const hotelRating = parseInt(req.body.hotelRating) || 1; // Assume 1 star if not provided
+        const hotelRating = parseInt(req.body.hotelRating) || 1; 
         const dateArrival = new Date(req.body.dateArrival);
         const dateDeparture = new Date(req.body.dateDeparture);
-        const weatherCondition = req.body.weatherCondition; // Assuming you have a field for weather condition
+        const weatherCondition = req.body.weatherCondition; 
         console.log('Before API call');
 
         const formattedDateArrival = dateArrival.toLocaleString('en-US', { timeZone: 'UTC' });
@@ -121,7 +121,7 @@ router.post('/submitForm', async (req, res) => {
 });
 
 router.get('/travelagency', (req, res) => {
-    const filePath = path.join(__dirname, '../public/html', 'index.html'); // Update the path
+    const filePath = path.join(__dirname, '../public/html', 'index.html'); 
     res.sendFile(filePath);
 });
 
