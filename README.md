@@ -8,12 +8,11 @@ Welcome to the Tour Management System, a web application built using Node.js and
     ```bash
     git clone https://github.com/Laura902l/assWeb2.git
     cd assWeb2
-    npm install method-override (do not forget)
 
     ```
 
 2. Install Dependencies:
-
+## Do not forget install method-override
     ```bash
     npm install method-override
     npm install
