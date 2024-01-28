@@ -31,11 +31,8 @@
     background-color: #fff;
     border-radius: 5px;
     animation: fadeOutBookingForm 0.5s;
-    /* Set the border properties for a thicker border */
     border: 3px solid #000;
-    /* Set border color to black */
     border-width: 3px 3px 3px 3px;
-    /* Set border thickness for top, right, bottom, and left */
 }
 
 @keyframes fadeOutBookingForm {
@@ -54,7 +51,6 @@
     left: 50%;
     transform: translate(-50%, -50%);
     background-color: #ffffff;
-    /* Bootstrap dark background color */
     width: 100%;
     max-width: 800px;
     padding: 20px;
@@ -63,13 +59,8 @@
     z-index: 4;
     animation: fadeInWeatherInformation 0.5s;
     color: rgb(0, 0, 0);
-    /* Set text color to white */
-
-    /* Set the border properties for a thicker border */
     border: 3px solid #000;
-    /* Set border color to black */
     border-width: 3px 3px 3px 3px;
-    /* Set border thickness for top, right, bottom, and left */
 }
 
 
@@ -82,9 +73,6 @@
         opacity: 1;
     }
 }
-
-
-
 
 
 #w {
