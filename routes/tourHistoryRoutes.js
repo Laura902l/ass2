@@ -21,7 +21,6 @@ const generateRandomAlphaNumeric = (length) => {
     return result;
 };
 
-// Function to generate a random number within a given range
 const generateRandomNumber = (min, max) => {
     return Math.floor(Math.random() * (max - min + 1)) + min;
 };
@@ -121,9 +120,4 @@ router.post('/history/delete/:index', (req, res) => {
 
     res.redirect('/history');
 });
-
-
-
-
-
 module.exports = router;
