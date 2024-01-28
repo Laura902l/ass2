@@ -19,8 +19,6 @@ async function getWeather() {
     const selectedCity = document.getElementById('citySelect').value;
     const response = await fetch(`/weather?city=${selectedCity}`);
     const weatherData = await response.json();
-
-    // Display weather information on the page
     document.getElementById('weatherResult').innerHTML = `
         <h2>${weatherData.location}</h2>
         <p>Condition: ${weatherData.condition}</p>
@@ -39,8 +37,6 @@ async function getWeather(name) {
     try {
         const response = await fetch(`/travel/weather/${name}`);
         const weatherData = await response.json();
-
-        // Display weather information on the page
         document.getElementById('weatherCityName').innerText = weatherData.location;
         document.getElementById('condition').innerText = `Condition: ${weatherData.condition}`;
         document.getElementById('temperature').innerText = `Temperature: ${weatherData.temperature}°C`;
@@ -58,14 +54,12 @@ async function getWeather(name) {
         document.getElementById('Adultprice').innerText = `Adult Price: $${adultPrice}`;
         document.getElementById('Kidsprice').innerText = `Kid Price: $${kidPrice}`;
     } catch (error) {
-        // Handle errors
         console.error('Error fetching weather data:', error.message);
         document.getElementById('weatherInformation').innerHTML = '<p>Error fetching weather data</p>';
     }
 }
 
 function calculateAdultPrice(cityName) {
-    // Add conditions for different cities and their respective adult prices
     if (['Cairo', 'Berlin', 'San Carlos'].includes(cityName)) {
         return 1000;
     } else if (['Sydney', 'Beijing', 'Dubai'].includes(cityName)) {
@@ -76,7 +70,6 @@ function calculateAdultPrice(cityName) {
 }
 
 function calculateKidPrice(cityName) {
-    // Add conditions for different cities and their respective kid prices
     if (['Cairo', 'Berlin', 'San Carlos'].includes(cityName)) {
         return 500;
     } else if (['Sydney', 'Beijing', 'Dubai'].includes(cityName)) {
