@@ -69,6 +69,3 @@ Two NPM packages related to the project are integrated:
 - A route is created to view the history of Tours.
 
 Feel free to explore and enjoy the Tour Management System!
-
-# webASS3
-# webASS3
